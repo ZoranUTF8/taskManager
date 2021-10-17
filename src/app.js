@@ -8,15 +8,12 @@ const connectToAtlasDB = require("./db/dbConnect")
 
 
 // MIDDLEWARE
+// serving static files
+app.use(express.static('./public'));
 app.use(express.json());
 
 
-
 // ROUTES
-app.get("/hello", (req, res) => {
-    res.send("OLA AMIGO")
-})
-
 app.use("/api/v1/tasks", tasks);
 
 // RUNNING SERVER AND DB CONNECTION
